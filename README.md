@@ -7,7 +7,7 @@
 - Luis Alberto Cortes
 
 ## URL repositorio github
-https://github.com/JuanDaCalderon/GhostE2E-semana7
+https://github.com/JuanDaCalderon/Ghost-entrega-final-semana8
 
 
 ## Funcionalidades cubiertas

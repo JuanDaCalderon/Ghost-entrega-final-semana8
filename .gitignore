@@ -7,3 +7,14 @@
 /pruebas_validacion_datos/kraken-ghost/reports/
 /pruebas_validacion_datos/kraken-ghost/results/
 /pruebas_validacion_datos/kraken-ghost/screenshots/
+
+/pruebas_regresion_visual/cypress-ghost/node_modules/
+/pruebas_regresion_visual/cypress-ghost/screenshots/
+/pruebas_regresion_visual/cypress-ghost/results/
+/pruebas_regresion_visual/cypress-ghost/cypress/videos/
+
+/pruebas_regresion_visual/kraken-ghost/node_modules/
+/pruebas_regresion_visual/kraken-ghost/results/
+/pruebas_regresion_visual/kraken-ghost/screenshots/
+
+/pruebas_regresion_visual/VRT-resemble/node_modules/

@@ -1,4 +1,9 @@
-/cypress-ghost/node_modules
-/kraken-ghost/node_modules
-/kraken-ghost/.kraken
-/kraken-ghost/reports
+/pruebas_validacion_datos/cypress-ghost/node_modules/
+/pruebas_validacion_datos/cypress-ghost/screenshots/
+/pruebas_validacion_datos/cypress-ghost/results/
+/pruebas_validacion_datos/cypress-ghost/cypress/videos/
+
+/pruebas_validacion_datos/kraken-ghost/node_modules/
+/pruebas_validacion_datos/kraken-ghost/reports/
+/pruebas_validacion_datos/kraken-ghost/results/
+/pruebas_validacion_datos/kraken-ghost/screenshots/

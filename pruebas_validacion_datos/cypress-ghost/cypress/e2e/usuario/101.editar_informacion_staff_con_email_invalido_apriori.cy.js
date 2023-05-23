@@ -1,10 +1,10 @@
-import { faker } from '@faker-js/faker';
+import PrioriDataPool from "../../helpers/prioriData.js";
 import configJson from '../../../config/config.json';
 import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  bio: faker.random.alpha(201),
+  email: PrioriDataPool.getRandomShortSentence(),
 }
 
 
@@ -23,12 +23,13 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
       //And I enter user name
-      cy.get('textarea[id="user-bio"]').clear().type(postData.bio,{force: true})
+      cy.get('input[id="user-email"]').clear().type(postData.email,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
@@ -38,9 +39,7 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p5");
 
       //then
-      Usuario.validateErrorTextFeedback('Bio is too long');
-      
-
+      Usuario.validateErrorTextFeedback('Please supply a valid email address');
       
       
     })

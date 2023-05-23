@@ -1,10 +1,10 @@
-import { faker } from '@faker-js/faker';
+import PrioriDataPool from "../../helpers/prioriData.js";
 import configJson from '../../../config/config.json';
 import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  name: faker.random.alpha(100)
+  name: PrioriDataPool.getRandomFirstName() + " " + PrioriDataPool.getRandomLastName()
 }
 
 
@@ -23,7 +23,8 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 

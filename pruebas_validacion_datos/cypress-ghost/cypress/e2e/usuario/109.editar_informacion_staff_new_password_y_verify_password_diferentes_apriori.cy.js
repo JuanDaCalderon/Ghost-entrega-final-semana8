@@ -4,9 +4,9 @@ import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  password: PrioriDataPool.getRandomPassword9(),
-  password_new: PrioriDataPool.getRandomPassword9(),
-  password_verification: PrioriDataPool.getRandomPassword9()
+  password: PrioriDataPool.getRandomPassword(),
+  password_new: PrioriDataPool.getRandomPassword(),
+  password_verification: PrioriDataPool.getRandomPassword()
 }
 
 
@@ -25,7 +25,8 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
@@ -40,7 +41,7 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p4");
 
       //And I enter password verification
-      cy.get('input[id="user-new-password-verification"]').clear().type(postData.password_new,{force: true})
+      cy.get('input[id="user-new-password-verification"]').clear().type(postData.password_verification,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
@@ -50,7 +51,7 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p5");
       
       //then
-      Usuario.validateErrorTextFeedback('Password must be at least 10 characters long');
+      Usuario.validateErrorTextFeedback('Your new passwords do not match');
       
       
     })

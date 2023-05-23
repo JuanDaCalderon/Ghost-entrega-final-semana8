@@ -4,9 +4,9 @@ import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  password: PrioriDataPool.getRandomPassword(),
-  password_new: PrioriDataPool.getRandomPassword(),
-  password_verification: PrioriDataPool.getRandomPassword()
+  password: PrioriDataPool.getRandomPassword9(),
+  password_new: PrioriDataPool.getRandomPassword9(),
+  password_verification: PrioriDataPool.getRandomPassword9()
 }
 
 
@@ -25,12 +25,13 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
       //And I enter password
-      cy.get('input[id="user-password-old"]').clear()
+      cy.get('input[id="user-password-old"]').clear().type(configJson.password,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
@@ -50,7 +51,7 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p5");
       
       //then
-      Usuario.validateErrorTextFeedback('Your current password is required to set a new one');
+      Usuario.validateErrorTextFeedback('Password must be at least 10 characters long');
       
       
     })

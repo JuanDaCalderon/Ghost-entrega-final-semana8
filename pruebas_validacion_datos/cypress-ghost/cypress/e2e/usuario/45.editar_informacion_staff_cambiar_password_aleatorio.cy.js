@@ -1,12 +1,12 @@
-import PrioriDataPool from "../../helpers/prioriData.js";
+import { faker } from '@faker-js/faker';
 import configJson from '../../../config/config.json';
 import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  password: PrioriDataPool.getRandomPassword(),
-  password_new: PrioriDataPool.getRandomPassword(),
-  password_verification: PrioriDataPool.getRandomPassword()
+  password: faker.internet.password(),
+  password_new: faker.internet.password(),
+  password_verification: faker.internet.password()
 }
 
 
@@ -25,22 +25,23 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
-      //And I enter password
+      //And I enter user name
       cy.get('input[id="user-password-old"]').clear().type(configJson.password,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
-      //And I enter password new
+      //And I enter user name
       cy.get('input[id="user-password-new"]').clear().type(postData.password_new,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
-      //And I enter password verification
-      cy.get('input[id="user-new-password-verification"]').clear().type(postData.password_verification,{force: true})
+      //And I enter user name
+      cy.get('input[id="user-new-password-verification"]').clear().type(postData.password_new,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
@@ -49,8 +50,7 @@ describe('editar usuario', () => {
       cy.wait(2000)
       cy.screenshot("editar_usuario_p5");
       
-      //then
-      Usuario.validateErrorTextFeedback('Your new passwords do not match');
+
       
       
     })

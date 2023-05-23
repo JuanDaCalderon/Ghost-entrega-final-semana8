@@ -4,9 +4,7 @@ import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  password: PrioriDataPool.getRandomPassword(),
-  password_new: PrioriDataPool.getRandomPassword(),
-  password_verification: PrioriDataPool.getRandomPassword()
+  twitter: PrioriDataPool.getRandomText301(),
 }
 
 
@@ -25,29 +23,25 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
       //And I enter user name
-      cy.get('input[id="user-password-old"]').clear().type(configJson.password,{force: true})
+      cy.get('input[id="user-twitter"]').clear().type(postData.twitter,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
-      //And I enter user name
-      cy.get('input[id="user-password-new"]').clear().type(postData.password_new,{force: true})
-      cy.wait(2000)
-      cy.screenshot("editar_usuario_p4");
-
-      //And I enter user name
-      cy.get('input[id="user-new-password-verification"]').clear().type(postData.password_new,{force: true})
-      cy.wait(2000)
-      cy.screenshot("editar_usuario_p4");
-
-      //And I change password
-      cy.get('button[class="gh-btn gh-btn-icon button-change-password gh-btn-red ember-view"]').click()
+      //And I click save
+      cy.get('button[class="gh-btn gh-btn-blue gh-btn-icon ember-view"]').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p5");
+
+      //And I click staff menu
+      cy.get(".gh-canvas-title > a[href='#/staff/']").click();
+      cy.wait(2000)
+      cy.screenshot("editar_usuario_p6");
       
 
       

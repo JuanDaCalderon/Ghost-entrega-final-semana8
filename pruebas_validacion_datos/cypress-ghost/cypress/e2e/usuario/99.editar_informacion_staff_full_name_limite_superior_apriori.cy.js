@@ -4,7 +4,7 @@ import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  name: PrioriDataPool.getRandomFirstName() + " " + PrioriDataPool.getRandomLastName()
+  name: PrioriDataPool.getRandomText301(),
 }
 
 
@@ -23,7 +23,8 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
@@ -37,10 +38,10 @@ describe('editar usuario', () => {
       cy.wait(2000)
       cy.screenshot("editar_usuario_p5");
 
-      //And I click staff menu
-      cy.get(".gh-canvas-title > a[href='#/staff/']").click();
-      cy.wait(2000)
-      cy.screenshot("editar_usuario_p6");
+      // Name is too long
+      //then
+      Usuario.validateErrorTextFeedback('Name is too long');
+      
       
     })
 })

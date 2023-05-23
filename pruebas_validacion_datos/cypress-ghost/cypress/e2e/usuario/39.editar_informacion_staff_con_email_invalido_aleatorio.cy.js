@@ -1,10 +1,10 @@
-import PrioriDataPool from "../../helpers/prioriData.js";
+import { faker } from '@faker-js/faker';
 import configJson from '../../../config/config.json';
 import loginPage from "../../page-object/login";
 import Usuario from "../../page-object/usuario";
 
 let postData = {
-  twitter: PrioriDataPool.getRandomText301(),
+  email: faker.random.alpha(100),
 }
 
 
@@ -23,12 +23,13 @@ describe('editar usuario', () => {
       cy.screenshot("editar_usuario_p2");
 
       //And I click in User pruebas
-      cy.get('a[href="#/staff/pruebas/"]').click()
+      //cy.get('a[href="#/staff/pruebas/"]').click()
+      cy.contains('Owner').click()
       cy.wait(2000)
       cy.screenshot("editar_usuario_p3");
 
       //And I enter user name
-      cy.get('input[id="user-twitter"]').clear().type(postData.twitter,{force: true})
+      cy.get('input[id="user-email"]').clear().type(postData.email,{force: true})
       cy.wait(2000)
       cy.screenshot("editar_usuario_p4");
 
@@ -37,12 +38,8 @@ describe('editar usuario', () => {
       cy.wait(2000)
       cy.screenshot("editar_usuario_p5");
 
-      //And I click staff menu
-      cy.get(".gh-canvas-title > a[href='#/staff/']").click();
-      cy.wait(2000)
-      cy.screenshot("editar_usuario_p6");
-      
-
+      //then
+      Usuario.validateErrorTextFeedback('Please supply a valid email address');
       
       
     })

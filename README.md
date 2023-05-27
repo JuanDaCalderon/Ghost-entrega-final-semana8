@@ -9,6 +9,8 @@
 ## URL repositorio github
 https://github.com/JuanDaCalderon/Ghost-entrega-final-semana8
 
+## Estrategia de Pruebas Automatizadas 
+https://uniandes-my.sharepoint.com/:f:/g/personal/o_barriosp_uniandes_edu_co/EolSb6Uy2xtKgXntwN6HNTEBN1ESNz0feVXZCgGo7fYATQ?e=FPq7fu
 
 ## Funcionalidades cubiertas
 - Inicio de sesion.

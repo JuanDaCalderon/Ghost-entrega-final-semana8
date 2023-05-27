@@ -191,6 +191,20 @@ Desde la carpeta raiz del proyecto, `GHOSTE2E-SEMANA7`  :
 ![image](https://user-images.githubusercontent.com/124101392/236692105-1516e344-7398-47a9-8896-c0a39a4433aa.png)
 * Elegir el que se desee ejecutar
 
+## ResembleJs
+Para ejecutar ResembleJS, teniendolo previamente instalado, en la carpeta `VRT-resemble` ejecutar el comando `node index.js`
+
+## Reporte HTML Comparacion visual
+
+Desde la raiz del proyecto, en el archivo `VRT-resemble\index.js` se encuentran la configuracion de los escenarios a los cuales se les realizara al prueba.
+
+En la carpeta `VRT-resemble\results` se encuentran los resultados para cada escenario donde se incluye el archivo `report.html` que muestra la imagen de la version 3.41.1 etiquetada como REFERENCE, la de la version 4.44 se etiqueta como Test y el resultante de la comparacion como DIFF
+<img width="908" alt="image" src="https://github.com/JuanDaCalderon/GhostE2E-semana6/assets/124101392/a643ba46-793f-499e-8f56-e013628a8ed6">
+<img width="880" alt="image" src="https://github.com/JuanDaCalderon/GhostE2E-semana6/assets/124101392/db63c958-c93c-4e51-a4f9-427f9d7ed095">
+
+## Reporte incidencias
+El registro de las diferencias visuales se encuentran en el siguinte link del repositorio:
+https://github.com/JuanDaCalderon/Ghost-entrega-final-semana8/issues
 
 ## Descripción de las estrategias usadas y cómo se integran estas estrategias en los escenarios de pruebas
 # Pool de datos a-priori
@@ -206,3 +220,6 @@ Dentro de los archivos de los escenarios de prueba identificados el texto `-api`
 # Escenario aleatorio
 Para esto, se instalo la libreria faker.
 Dentro de los archivos de los escenarios de prueba identificados el texto `-aleatorio` al final del nombre, se importo la libreria y se incluyen los metodos de faker segun el dato requerido.
+
+
+# Link video

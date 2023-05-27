@@ -18,6 +18,9 @@ https://github.com/JuanDaCalderon/Ghost-entrega-final-semana8
 - Staff
 - General settings
 
+## Pruebas manuales de exploracion 
+https://uniandes-my.sharepoint.com/personal/o_barriosp_uniandes_edu_co/_layouts/15/onedrive.aspx?csf=1&web=1&e=UcSPaK&cid=2bb875fc%2D2715%2D48c0%2D8176%2D3e69b8fcf5d5&id=%2Fpersonal%2Fo%5Fbarriosp%5Funiandes%5Fedu%5Fco%2FDocuments%2FPruebas%20manuales%20proyecto%20final%20%2D%20videos&FolderCTID=0x012000E5EB07D46C24CB429B2B66C464546BCA&view=0
+
 ## 120 Escenarios de pruebas con generación de datos
 A continuacion se listan los escenarios desarrollados en cypress y en Kraken.
 El data pool utilizado se identifica al final del nombre del escenario despues del simbolo `-`, apriori, api y aleatorio
